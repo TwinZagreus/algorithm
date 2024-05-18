@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <sstream>	//包含ostringstream
-#include <algorithm>//包含find函数	
+#include <algorithm>//包含find函数
 #include <iterator>//ostream_iterator
 #include <string>
 //类arrayList
@@ -45,7 +45,7 @@ public:
 	void insert(int theIndex, const T &theElement);
 	void output() const;
 	template <typename U>
-	friend std::ostream & operator<<(std::ostream &out, arrayList<U> x);	
+	friend std::ostream & operator<<(std::ostream &out, arrayList<U> x);
 	int capacity() const {return arrayLength;}
 
 protected:
@@ -83,11 +83,11 @@ int main()
 	//验证empty函数
 	std::cout << "the four array x,y,z and w is empty?" << std::endl;
 	if(x ->empty()) {std::cout << "is empty"<< std::endl;}
-	if(y.empty()) {std::cout << "is empty"<< std::endl;} 
+	if(y.empty()) {std::cout << "is empty"<< std::endl;}
 	if(z.empty()) {std::cout << "is empty" << std::endl;}
 
 	//验证size()函数
-	std::cout << "the size of x,y,z and w :" 
+	std::cout << "the size of x,y,z and w :"
 		<< x->size() << " "
 		<< y.size() << " "
 		<< z.size() << std::endl;
@@ -109,7 +109,7 @@ int main()
     y.insert(0,6);
     y.insert(0,7);
     y.output();
-    if(y.empty()) {std::cout << "is empty"<< std::endl;} 
+    if(y.empty()) {std::cout << "is empty"<< std::endl;}
     std::cout << y;
 	return 0;
 }
@@ -188,7 +188,7 @@ void changeLength1D(T* a,int oldLength, int newLength)
 	T* temp = new T[newLength];
 	int number = std::min(newLength, oldLength);
 	std::copy(a, a+number, temp);
-	a = temp;	
+	a = temp;
 	delete [] temp;
 }
 
@@ -217,14 +217,3 @@ void arrayList <T> ::output() const
 	}
 		std::cout << std::endl;
 }
-
-
-
-
-
-
-
-
-
-
-

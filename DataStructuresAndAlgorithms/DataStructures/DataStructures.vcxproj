@@ -130,9 +130,11 @@
     <ClCompile Include="DataStructures.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="arrayList\arrayList.h" />
-    <ClInclude Include="arrayList\linearList.h" />
+    <ClInclude Include="chapter-5\arrayList.h" />
+    <ClInclude Include="chapter-5\linearList.h" />
+    <ClInclude Include="chapter-5\iterator.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="chapter-5\vectorList.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DataStructures.rc" />

@@ -9,7 +9,7 @@
 #include <string>
 
 #include "linearList.h"
-
+#include "iterator.h"
 
 
 //arrayList<int> test(9);
@@ -42,6 +42,16 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const arrayList<U> & x);
     int capacity() const { return arrayLength; }
 
+	iterator<T> begin() const { return _begin; }
+	iterator<T> end() const { return _end; }
+
+private:
+	iterator<T> _begin;
+	iterator<T> _end;
+	void resetIterator() {
+		_begin = iterator<T>(element);
+		_end = iterator<T>(element + listSize);
+	};
 protected:
     void checkIndex(int theIndex) const;
     T* element;        // 存储线性表元素的一维数组
@@ -62,6 +72,7 @@ arrayList<T> ::arrayList(int initialCapacity)
 	arrayLength = initialCapacity;
 	element = new T(arrayLength);
 	listSize = 0;
+	resetIterator();
 };
 
 template<class T>
@@ -70,6 +81,7 @@ arrayList<T>::arrayList(const arrayList<T>& theList) {
 	listSize = theList.listSize;
 	element = new T[arrayLength];
 	std::copy(theList.element, theList.element + listSize, element);
+	resetIterator();
 }
 
 template<class T>
@@ -99,6 +111,7 @@ void arrayList<T>::erase(int theIndex)
 	checkIndex(theIndex);
 	std::copy(element + theIndex + 1, element + listSize, element + theIndex);
 	element[--listSize].~T();
+	resetIterator();
 }
 
 template<class T>
@@ -118,6 +131,7 @@ void arrayList<T>::insert(int theIndex, const T& theELement)
 	std::copy(element + theIndex, element + listSize, element + theIndex + 1);
 	element[theIndex] = theELement;
 	listSize++;
+	resetIterator();
 }
 
 template<class T>
@@ -135,6 +149,7 @@ std::ostream& operator<<(std::ostream& out, const arrayList<T>& x) {
 	x.output(out);
 	return out;
 }
+
 
 template<class T>
 void arrayList<T>::checkIndex(int theIndex)const {
