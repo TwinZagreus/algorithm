@@ -128,11 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataStructures.cpp" />
-    <ClCompile Include="arrayList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="arrayList.h" />
-    <ClInclude Include="linearList.h" />
+    <ClInclude Include="arrayList\arrayList.h" />
+    <ClInclude Include="arrayList\linearList.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DataStructures.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

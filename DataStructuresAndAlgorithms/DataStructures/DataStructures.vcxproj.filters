@@ -18,16 +18,21 @@
     <ClCompile Include="DataStructures.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="arrayList.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="linearList.h">
+    <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="arrayList.h">
+    <ClInclude Include="arrayList\arrayList.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="arrayList\linearList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DataStructures.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

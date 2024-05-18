@@ -2,14 +2,22 @@
 //
 
 #include <iostream>
-#include "arrayList.h"
+//#include "arrayList.h"
+//#include "testWorld.h"
+#include "arrayList/arrayList.h"
+#include "arrayList/linearList.h"
 
 int main()
 {
-    arrayList<int>* a = new arrayList<int>(8);
-    
+    //arrayList<int>* a = new arrayList<int>(8);
+    //linearList<double>* x = new arrayList<double>(10);
+
+
+    //mininArrayList<int> y(7);
+    //std::cout << y.capacity() << std::endl;
 
     std::cout << "Hello 1 World!\n";
+    return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
