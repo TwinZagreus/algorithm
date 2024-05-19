@@ -130,9 +130,15 @@
     <ClCompile Include="DataStructures.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="chapter-6\binSort.h" />
+    <ClInclude Include="chapter-6\chain.h" />
     <ClInclude Include="chapter-5\arrayList.h" />
     <ClInclude Include="chapter-5\linearList.h" />
     <ClInclude Include="chapter-5\iterator.h" />
+    <ClInclude Include="chapter-6\extendedChain.h" />
+    <ClInclude Include="chapter-6\extendedLinearList.h" />
+    <ClInclude Include="chapter-6\circularListWithHeader.h" />
+    <ClInclude Include="myExceptions.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="chapter-5\vectorList.h" />
   </ItemGroup>

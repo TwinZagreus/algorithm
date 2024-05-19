@@ -16,7 +16,7 @@
 using namespace std;
 
 template<class T>
-class extendedChain : public extendedLinearList<T>, public chain<T> 
+class extendedChain : public extendedLinearList<T>, public chain<T>
 {
    public:
       // constructor and copy constructor
@@ -51,7 +51,7 @@ class extendedChain : public extendedLinearList<T>, public chain<T>
       // additional method
       void zero()
          {firstNode = NULL; listSize = 0;}
-      
+
    protected:
       chainNode<T>* lastNode;  // pointer to last node in chain
 };
@@ -70,12 +70,12 @@ void extendedChain<T>::erase(int theIndex)
       deleteNode = firstNode;
       firstNode = firstNode->next;
    }
-   else 
+   else
    {  // use p to get to predecessor of desired node
       chainNode<T>* p = firstNode;
       for (int i = 0; i < theIndex - 1; i++)
          p = p->next;
-   
+
       deleteNode = p->next;
       p->next = p->next->next; // remove deleteNode from chain
       if (deleteNode == lastNode)
@@ -106,7 +106,7 @@ void extendedChain<T>::insert(int theIndex, const T& theElement)
       chainNode<T>* p = firstNode;
       for (int i = 0; i < theIndex - 1; i++)
          p = p->next;
-   
+
       // insert after p
       p->next = new chainNode<T>(theElement, p->next);
       if (listSize == theIndex)

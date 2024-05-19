@@ -7,7 +7,7 @@
 using namespace std;
 
 // illegal parameter value
-class illegalParameterValue 
+class illegalParameterValue
 {
    public:
       illegalParameterValue(string theMessage = "Illegal parameter value")
@@ -18,7 +18,7 @@ class illegalParameterValue
 };
 
 // illegal input data
-class illegalInputData 
+class illegalInputData
 {
    public:
       illegalInputData(string theMessage = "Illegal data input")
@@ -29,7 +29,7 @@ class illegalInputData
 };
 
 // illegal index
-class illegalIndex 
+class illegalIndex
 {
    public:
       illegalIndex(string theMessage = "Illegal index")
@@ -40,7 +40,7 @@ class illegalIndex
 };
 
 // matrix index out of bounds
-class matrixIndexOutOfBounds 
+class matrixIndexOutOfBounds
 {
    public:
       matrixIndexOutOfBounds
@@ -52,10 +52,10 @@ class matrixIndexOutOfBounds
 };
 
 // matrix size mismatch
-class matrixSizeMismatch 
+class matrixSizeMismatch
 {
    public:
-      matrixSizeMismatch(string theMessage = 
+      matrixSizeMismatch(string theMessage =
                    "The size of the two matrics doesn't match")
             {message = theMessage;}
       void outputMessage() {cout << message << endl;}
@@ -67,7 +67,7 @@ class matrixSizeMismatch
 class stackEmpty
 {
    public:
-      stackEmpty(string theMessage = 
+      stackEmpty(string theMessage =
                    "Invalid operation on empty stack")
             {message = theMessage;}
       void outputMessage() {cout << message << endl;}
@@ -79,7 +79,7 @@ class stackEmpty
 class queueEmpty
 {
    public:
-      queueEmpty(string theMessage = 
+      queueEmpty(string theMessage =
                    "Invalid operation on empty queue")
             {message = theMessage;}
       void outputMessage() {cout << message << endl;}
@@ -91,7 +91,7 @@ class queueEmpty
 class hashTableFull
 {
    public:
-      hashTableFull(string theMessage = 
+      hashTableFull(string theMessage =
                    "The hash table is full")
             {message = theMessage;}
       void outputMessage() {cout << message << endl;}
@@ -103,7 +103,7 @@ class hashTableFull
 class undefinedEdgeWeight
 {
    public:
-      undefinedEdgeWeight(string theMessage = 
+      undefinedEdgeWeight(string theMessage =
                    "No edge weights defined")
             {message = theMessage;}
       void outputMessage() {cout << message << endl;}
@@ -115,7 +115,7 @@ class undefinedEdgeWeight
 class undefinedMethod
 {
    public:
-      undefinedMethod(string theMessage = 
+      undefinedMethod(string theMessage =
                    "This method is undefined")
             {message = theMessage;}
       void outputMessage() {cout << message << endl;}

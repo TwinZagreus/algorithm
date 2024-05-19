@@ -35,6 +35,24 @@
     <ClInclude Include="chapter-5\vectorList.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="chapter-6\chain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-6\extendedLinearList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-6\extendedChain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-6\circularListWithHeader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="myExceptions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-6\binSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DataStructures.rc">
