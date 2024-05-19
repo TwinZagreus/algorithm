@@ -75,18 +75,7 @@ using namespace std;
 
 int main()
 {
-    struct worldnew
-    {
-        string a = "wor11ld";
-    };
+    
 
-    //string* a_p = &a;
-    //string** a_pp = &a_p;
-
-    worldnew* wn_p = new worldnew();
-    worldnew** wn_pp = &wn_p;
-
-    std::cout << "Hello 1 World!"<< (*wn_p).a <<std::endl;
-    std::cout << "Hello 1 World!\n";
     exit(0);
 }

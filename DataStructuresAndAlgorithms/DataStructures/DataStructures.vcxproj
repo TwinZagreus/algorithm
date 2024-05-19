@@ -138,6 +138,7 @@
     <ClInclude Include="chapter-6\extendedChain.h" />
     <ClInclude Include="chapter-6\extendedLinearList.h" />
     <ClInclude Include="chapter-6\circularListWithHeader.h" />
+    <ClInclude Include="chapter-7\matrix.h" />
     <ClInclude Include="myExceptions.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="chapter-5\vectorList.h" />

@@ -53,6 +53,9 @@
     <ClInclude Include="chapter-6\binSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="chapter-7\matrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DataStructures.rc">

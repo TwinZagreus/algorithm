@@ -5,7 +5,7 @@
 
 using namespace std;
 template<class T>
-class matrix 
+class matrix
 {
    friend ostream& operator<<(ostream&, const matrix<T>&);
    public:
@@ -26,7 +26,7 @@ class matrix
        int theRows,    // number of rows in matrix
            theColumns; // number of columns in matrix
        T *element;     // element array
-};  
+};
 
 template<class T>
 matrix<T>::matrix(int theRows, int theColumns)
@@ -104,7 +104,7 @@ template<class T>
 matrix<T> matrix<T>::
           operator-(const matrix<T>& m) const
 {// Return (*this) - m.
-   if (theRows != m.theRows 
+   if (theRows != m.theRows
        || theColumns != m.theColumns)
       throw matrixSizeMismatch();
 
@@ -131,7 +131,7 @@ matrix<T> matrix<T>::operator-() const
 template<class T>
 matrix<T> matrix<T>::operator*(const matrix<T>& m) const
 {// matrix multiply.  Return w = (*this) * m.
-   if (theColumns != m.theRows) 
+   if (theColumns != m.theRows)
       throw matrixSizeMismatch();
 
    matrix<T> w(theRows, m.theColumns);  // result matrix
@@ -155,7 +155,7 @@ matrix<T> matrix<T>::operator*(const matrix<T>& m) const
              sum += element[ct] * m.element[cm];
           }
           w.element[cw++] = sum;  // save w(i,j)
- 
+
           // reset to start of row and next column
           ct -= theColumns - 1;
           cm = j;
