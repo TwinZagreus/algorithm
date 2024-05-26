@@ -91,10 +91,15 @@ inline matrix<T> matrix<T>::operator+() const
 template<typename T>
 inline matrix<T> matrix<T>::operator+(const matrix<T>& m) const
 {
+    w = (*this) + m;
     if (theRows!=m.theRows||theColumns!=m.theColumns) {
         throw matrixSizeMismatch();
     }
-    return matrix<T>();
+    matrix<T> w(theRows,theColumns);
+    for (int i = 0; i < theRows * theColumns;i++) {
+        w.element[i] = element[i] + m.element[i];
+    }
+    return w;
 }
 
 template<typename T>
