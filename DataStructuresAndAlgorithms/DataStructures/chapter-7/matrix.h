@@ -91,7 +91,7 @@ inline matrix<T> matrix<T>::operator+() const
 template<typename T>
 inline matrix<T> matrix<T>::operator+(const matrix<T>& m) const
 {
-    w = (*this) + m;
+    //w = (*this) + m;
     if (theRows!=m.theRows||theColumns!=m.theColumns) {
         throw matrixSizeMismatch();
     }
@@ -105,6 +105,9 @@ inline matrix<T> matrix<T>::operator+(const matrix<T>& m) const
 template<typename T>
 inline matrix<T> matrix<T>::operator-() const
 {
+    if (theRows != m.theRows
+        || theColumns != m.theColumns)
+        throw matrixSizeMismatch();
     return matrix<T>();
 }
 
