@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="chapter-8\railroadWithStacks.cpp" />
     <ClCompile Include="DataStructures.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +144,10 @@
     <ClInclude Include="chapter-7\matrix.h" />
     <ClInclude Include="chapter-7\matrixTerm.h" />
     <ClInclude Include="chapter-7\sparseMatrix.h" />
+    <ClInclude Include="chapter-8\arrayStack.h" />
+    <ClInclude Include="chapter-8\derivedArrayStack.h" />
+    <ClInclude Include="chapter-8\linkedStack.h" />
+    <ClInclude Include="chapter-8\stack.h" />
     <ClInclude Include="myExceptions.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="chapter-5\vectorList.h" />

@@ -18,6 +18,9 @@
     <ClCompile Include="DataStructures.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="chapter-8\railroadWithStacks.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -69,6 +72,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="chapter-7\linkedMatrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-8\stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-8\derivedArrayStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-8\arrayStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-8\linkedStack.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

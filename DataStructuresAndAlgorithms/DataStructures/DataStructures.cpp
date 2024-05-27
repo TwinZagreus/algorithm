@@ -69,6 +69,8 @@ int main()
 
 
 
+
+/*****************************************************************
 #include <iostream>
 #include <string>
 #include "chapter-7/sparseMatrix.h"
@@ -95,5 +97,160 @@ int main()
     cout << "The sum of a and b is" << endl << c;
 
     return 0;
+    exit(0);
+}
+/*****************************************************************/
+
+
+
+
+
+/*****************************************************************
+#include <iostream>
+#include <string>
+#include "chapter-8/arrayStack.h"
+#include "chapter-8/linkedStack.h"
+
+using namespace std;
+
+int main()
+{
+    arrayStack<int> s;
+
+    // add a few elements
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+
+    cout << "Stack should be 1234, bottom to top" << endl;
+
+    // test empty and size
+    if (s.empty())
+        cout << "The stack is empty" << endl;
+    else
+        cout << "The stack is not empty" << endl;
+
+    cout << "The stack size is " << s.size() << endl;
+
+    while (!s.empty())
+    {
+        cout << "Stack top is " << s.top() << endl;
+        s.pop();
+        cout << "Popped top element" << endl;
+    }
+
+    try { s.pop(); }
+    catch (stackEmpty message)
+    {
+        cout << "Last pop failed " << endl;
+        message.outputMessage();
+    }
+
+
+    linkedStack<int> s;
+
+    // add a few elements
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+
+    cout << "Stack should be 1234, bottom to top" << endl;
+
+    // test empty and size
+    if (s.empty())
+        cout << "The stack is empty" << endl;
+    else
+        cout << "The stack is not empty" << endl;
+
+    cout << "The stack size is " << s.size() << endl;
+
+    while (!s.empty())
+    {
+        cout << "Stack top is " << s.top() << endl;
+        s.pop();
+        cout << "Popped top element" << endl;
+    }
+
+    try { s.pop(); }
+    catch (stackEmpty message)
+    {
+        cout << "Last pop failed " << endl;
+        message.outputMessage();
+    }
+
+   
+    exit(0);
+}
+/*****************************************************************/
+
+/*****************************************************************
+#include <iostream>
+#include <string>
+#include "chapter-8/arrayStack.h"
+
+using namespace std;
+
+void towersOfHanoi(int n, int x, int y, int z)
+{// Move the top n disks from tower x to tower y.
+ // Use tower z for intermediate storage.
+    if (n > 0)
+    {
+        towersOfHanoi(n - 1, x, z, y);
+        cout << "Move top disk from tower " << x
+            << " to top of tower " << y << endl;
+        towersOfHanoi(n - 1, z, y, x);
+    }
+}
+
+
+arrayStack<int> tower[4];
+
+
+void moveAndShow(int, int, int, int);
+
+void towersOfHanoiStack(int n)
+{// Preprocessor for moveAndShow.
+    for (int d = n; d > 0; d--) // initialize
+        tower[1].push(d); // add disk d to tower 1
+
+     // move n disks from tower 1 to 3 using 2 as
+     // intermediate tower
+    moveAndShow(n, 1, 2, 3);
+}
+
+void moveAndShow(int n, int x, int y, int z)
+{// Move the top n disks from tower x to tower y showing states.
+ // Use tower z for intermediate storage.
+    if (n > 0)
+    {
+        moveAndShow(n - 1, x, z, y);
+        int d = tower[x].top();   // move a disk from top of
+        tower[x].pop();           // tower x to top of
+        tower[y].push(d);         // tower y
+     // showState();              // show state of 3 towers
+     // substitute showState code for test run
+        cout << "Move disk " << d << " from tower "
+            << x << " to top of tower " << y << endl;
+        moveAndShow(n - 1, z, y, x);
+    }
+}
+
+int main() {
+
+    towersOfHanoi(2, 1, 2, 3);
+    towersOfHanoiStack(2);
+
+    exit(0);
+}
+/*****************************************************************/
+
+
+
+#include <iostream>
+#include <string>
+int main() {
+
     exit(0);
 }
