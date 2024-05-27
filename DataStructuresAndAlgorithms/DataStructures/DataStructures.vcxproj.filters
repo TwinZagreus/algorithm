@@ -56,6 +56,21 @@
     <ClInclude Include="chapter-7\matrix.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="chapter-7\diagonalMatrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-7\tridiagonalMatrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-7\sparseMatrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-7\matrixTerm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-7\linkedMatrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DataStructures.rc">

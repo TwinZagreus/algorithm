@@ -108,24 +108,94 @@ inline matrix<T> matrix<T>::operator-() const
     if (theRows != m.theRows
         || theColumns != m.theColumns)
         throw matrixSizeMismatch();
-    return matrix<T>();
+    // create result matrix w
+    matrix<T> w(theRows, theColumns);
+    for (int i = 0; i < theRows * theColumns; i++)
+    {
+        w.element[i] = element[i] - m.element[i];
+    }
+
+    return w;
 }
 
 template<typename T>
 inline matrix<T> matrix<T>::operator-(const matrix<T>&) const
 {
-    return matrix<T>();
+    matrix<T> w(theRows, theColumns);
+    for (int i = 0; i < theRows * theColumns; i++)
+        w.element[i] = -element[i];
+    return w;
 }
 
 template<typename T>
-inline matrix<T> matrix<T>::operator*(const matrix<T>&) const
+inline matrix<T> matrix<T>::operator*(const matrix<T>& m) const
 {
-    return matrix<T>();
+    if (theColumns!=m.theRows) {
+        throw matrixSizeMismatch();
+    }
+    matrix<T> w(theRows, m.theColumns);
+    int ct = 0; 
+    int cm = 0; 
+    int cw = 0;
+    for (int i = 1; i <= theRows;i++) {
+        for (int j = 1; j <= m.theColumns; j++) {
+            //计算w(i,j)第一项
+            T sum = element[ct] * m.element[cm];
+            for (int k = 2; k <= theColumns;k++) {
+                ct++;
+                cm += m.theColumns;
+                sum += element[ct] * m.element[cm];
+            }
+            w.element[cw++] = sum;
+
+            ct = ct - theColumns + 1;
+            cm = j;
+        }
+        ct = ct + theColumns;
+        cm = 0;
+    }
+    return w;
 }
 
 template<typename T>
 inline matrix<T>& matrix<T>::operator+=(const T&)
 {
     // TODO: 在此处插入 return 语句
+    for (int i = 0; i < theRows * theColumns; i++)
+        element[i] += x;
+    return *this;
 }
 
+template<class T>
+ostream& operator<<(ostream& out, const matrix<T>& m)
+{// Put matrix m into the stream out.
+ // One row per line.
+    int k = 0;  // index into element array
+    for (int i = 0; i < m.theRows; i++)
+    {// do row i
+        for (int j = 0; j < m.theColumns; j++)
+            out << m.element[k++] << "  ";
+
+        // row i finished
+        out << endl;
+    }
+
+    return out;
+}
+
+// for some reason compiler can't create this on its own
+ostream& operator<<(ostream& out, const matrix<int>& m)
+{// Put matrix m into the stream out.
+ // One row per line.
+    int k = 0;  // index into element array
+    for (int i = 0; i < m.theRows; i++)
+    {// do row i
+        for (int j = 0; j < m.theColumns; j++)
+            out << m.element[k++] << "  ";
+
+        // row i finished
+        out << endl;
+    }
+
+    return out;
+}

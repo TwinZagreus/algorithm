@@ -71,11 +71,29 @@ int main()
 
 #include <iostream>
 #include <string>
+#include "chapter-7/sparseMatrix.h"
+
 using namespace std;
 
 int main()
 {
     
+    sparseMatrix<int> a, b, c;
 
+    // test input and output
+    cin >> a;
+    cout << "Matrix a is" << endl << a;
+    cin >> b;
+    cout << "Matrix b is" << endl << b;
+
+    // test transpose
+    a.transpose(c);
+    cout << "The transpose of a is" << endl << c;
+
+    // test add
+    a.add(b, c);
+    cout << "The sum of a and b is" << endl << c;
+
+    return 0;
     exit(0);
 }

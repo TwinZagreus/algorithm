@@ -9,7 +9,7 @@
 #include <string>
 
 #include "linearList.h"
-#include "iterator.h"
+//#include "iterator.h"
 
 
 //arrayList<int> test(9);
@@ -40,17 +40,78 @@ public:
     void output() const;
     template <typename U>
     friend std::ostream& operator<<(std::ostream& out, const arrayList<U> & x);
-    int capacity() const { return arrayLength; }
 
-	iterator<T> begin() const { return _begin; }
-	iterator<T> end() const { return _end; }
+
+    int capacity() const { return arrayLength; }
+	void reSet(int);
+	void set(int, const T&);
+	void clear() { listSize = 0; }
+
+	class iterator;
+	iterator begin() const { return _begin; }
+	iterator end() const { return _end; }
+
+
+	class iterator
+	{
+	public:
+		// typedefs required by C++ for a bidirectional iterator
+		typedef bidirectional_iterator_tag iterator_category;
+		typedef T value_type;
+		typedef ptrdiff_t difference_type;
+		typedef T* pointer;
+		typedef T& reference;
+
+		// constructor
+		iterator(T* thePosition = 0) { position = thePosition; }
+
+		// dereferencing operators
+		T& operator*() const { return *position; }
+		T* operator->() const { return &*position; }
+
+		// increment
+		iterator& operator++()   // preincrement
+		{
+			++position; return *this;
+		}
+		iterator operator++(int) // postincrement
+		{
+			iterator old = *this;
+			++position;
+			return old;
+		}
+
+		// decrement
+		iterator& operator--()   // predecrement
+		{
+			--position; return *this;
+		}
+		iterator operator--(int) // postdecrement
+		{
+			iterator old = *this;
+			--position;
+			return old;
+		}
+
+		// equality testing
+		bool operator!=(const iterator right) const
+		{
+			return position != right.position;
+		}
+		bool operator==(const iterator right) const
+		{
+			return position == right.position;
+		}
+	protected:
+		T* position;
+	};  // end of iterator class
 
 private:
-	iterator<T> _begin;
-	iterator<T> _end;
+	iterator _begin;
+	iterator _end;
 	void resetIterator() {
-		_begin = iterator<T>(element);
-		_end = iterator<T>(element + listSize);
+		_begin = iterator(element);
+		_end = iterator(element + listSize);
 	};
 protected:
     void checkIndex(int theIndex) const;
@@ -70,7 +131,7 @@ arrayList<T> ::arrayList(int initialCapacity)
 		throw std::invalid_argument(s.str());
 	}
 	arrayLength = initialCapacity;
-	element = new T(arrayLength);
+	element = new T[arrayLength];
 	listSize = 0;
 	resetIterator();
 };
@@ -142,6 +203,32 @@ void arrayList<T>::output() const
 		std::cout << *(element + i) << " ";
 	}
 	std::cout << std::endl;
+}
+
+template<class T>
+inline void arrayList<T>::reSet(int theSize)
+{
+	if (theSize < 0)
+	{
+		ostringstream s;
+		s << "Requested size = " << theSize << " Must be >= 0";
+		throw illegalParameterValue(s.str());
+	}
+
+	if (theSize > arrayLength)
+	{// need a larger array
+		delete element;
+		element = new T[theSize];
+		arrayLength = listSize;
+	}
+	listSize = theSize;
+}
+
+template<class T>
+inline void arrayList<T>::set(int theIndex, const T& newValue)
+{
+	checkIndex(theIndex);
+	element[theIndex] = newValue;
 }
 
 template<class T>

@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -138,10 +138,15 @@
     <ClInclude Include="chapter-6\extendedChain.h" />
     <ClInclude Include="chapter-6\extendedLinearList.h" />
     <ClInclude Include="chapter-6\circularListWithHeader.h" />
+    <ClInclude Include="chapter-7\diagonalMatrix.h" />
+    <ClInclude Include="chapter-7\linkedMatrix.h" />
     <ClInclude Include="chapter-7\matrix.h" />
+    <ClInclude Include="chapter-7\matrixTerm.h" />
+    <ClInclude Include="chapter-7\sparseMatrix.h" />
     <ClInclude Include="myExceptions.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="chapter-5\vectorList.h" />
+    <ClInclude Include="chapter-7\tridiagonalMatrix.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DataStructures.rc" />

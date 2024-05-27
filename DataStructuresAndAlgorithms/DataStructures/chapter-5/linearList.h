@@ -28,7 +28,7 @@ void changeLength1D(T*& a, int oldLength, int newLength)
 	if (newLength < 0) {
 		throw std::invalid_argument("newLength cannot be negative");
 	}
-	T* temp = new T(newLength);
+	T* temp = new T[newLength];
 	//获取要复制的元素个数
 	int number = std::min(oldLength, newLength);
 	//a的前number复制给temp
