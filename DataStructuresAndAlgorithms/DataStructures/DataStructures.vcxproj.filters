@@ -92,6 +92,9 @@
     <ClInclude Include="chapter-9\arrayQueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="chapter-9\linkedQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DataStructures.rc">
