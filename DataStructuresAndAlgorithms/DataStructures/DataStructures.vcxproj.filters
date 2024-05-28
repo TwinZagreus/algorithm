@@ -86,6 +86,12 @@
     <ClInclude Include="chapter-8\linkedStack.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="chapter-9\queue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chapter-9\arrayQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DataStructures.rc">
