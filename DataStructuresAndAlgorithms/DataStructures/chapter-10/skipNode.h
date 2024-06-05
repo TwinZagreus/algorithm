@@ -3,6 +3,7 @@
 template <typename K, typename E>
 struct skipNode
 {
+
     typedef pair<const K, E> pairType;
     pairType element;
     skipNode<K, E>** next;   // Êý×éÖ¸Õë
@@ -11,4 +12,5 @@ struct skipNode
         :element(thePair) {
         next = new skipNode<K, E>* [size];
     }
+
 };

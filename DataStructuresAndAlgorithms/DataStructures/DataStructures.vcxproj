@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -133,6 +133,8 @@
   <ItemGroup>
     <ClInclude Include="chapter-10\dictionary.h" />
     <ClInclude Include="chapter-10\pairNode.h" />
+    <ClInclude Include="chapter-10\skipList.h" />
+    <ClInclude Include="chapter-10\skipNode.h" />
     <ClInclude Include="chapter-10\sortedChain.h" />
     <ClInclude Include="chapter-6\binSort.h" />
     <ClInclude Include="chapter-6\chain.h" />

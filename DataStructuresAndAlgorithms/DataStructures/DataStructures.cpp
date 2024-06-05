@@ -374,7 +374,5 @@ int main() {
     cout << "The chain is " << z << endl;
     cout << "Its size is " << z.size() << endl;
 
-
-
     exit(0);
 }
