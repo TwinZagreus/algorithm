@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -131,6 +131,9 @@
     <ClCompile Include="DataStructures.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="chapter-10\dictionary.h" />
+    <ClInclude Include="chapter-10\pairNode.h" />
+    <ClInclude Include="chapter-10\sortedChain.h" />
     <ClInclude Include="chapter-6\binSort.h" />
     <ClInclude Include="chapter-6\chain.h" />
     <ClInclude Include="chapter-5\arrayList.h" />
