@@ -132,6 +132,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="chapter-10\dictionary.h" />
+    <ClInclude Include="chapter-10\hash.h" />
+    <ClInclude Include="chapter-10\hashTable.h" />
     <ClInclude Include="chapter-10\pairNode.h" />
     <ClInclude Include="chapter-10\skipList.h" />
     <ClInclude Include="chapter-10\skipNode.h" />
